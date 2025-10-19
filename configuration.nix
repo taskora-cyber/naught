@@ -51,9 +51,6 @@
     };
   };
 
-  # 导入引导程序模块
-  imports = [./boot.nix ./fonts.nix];
-
   # 状态版本
   system.stateVersion = version;
   # 网络配置
