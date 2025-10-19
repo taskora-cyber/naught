@@ -1,6 +1,7 @@
 {
   pkgs,
   version,
+  sshkeys,
   hostname,
   username,
   userpswd,
@@ -42,6 +43,8 @@
         isNormalUser = true;
         # 设置此用户的哈希密码
         hashedPassword = binTohash userpswd;
+        # 用户SSH配置
+        openssh.authorizedKeys.keys = sshkeys;
       };
       # 特级权限用户的哈希密码
       root.hashedPassword = binTohash rootpswd;
